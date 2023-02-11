@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import userPic from '../../assets/user.png'
 import { useDispatch, useSelector } from "react-redux";
 import {
   addComments,
@@ -63,7 +63,7 @@ const ArticleDetails = () => {
       <div className="bottom">
         <h4>Comments</h4>
         <form onSubmit={submitHandler}>
-          <img src={user?.avtar?.url} alt="" />
+          <img src={user?.avtar?.url || userPic} alt="" />
           <div>
             <textarea
               onChange={(e) => setComment(e.target.value)}
