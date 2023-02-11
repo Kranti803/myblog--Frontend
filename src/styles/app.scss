@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+$text:'Lora', serif;
+$logo:'League Spartan', sans-serif;
+$navText:'Roboto', sans-serif;
+
+@import '../components/Carousel/carousel.scss';
+@import '../components/Layouts/Header/header.scss';
+@import '../components/Layouts/Footer/footer.scss';
+@import '../components/Layouts/NotFound/NotFound.scss';
+@import '../components/GetAllArticles/GetAllArticles.scss';
+@import '../components/ArticleDetails/articledetails.scss';
+@import '../components/Auth/Login/login.scss';
+@import '../components/Auth/SignUp/signup.scss';
+@import '../components/About/about.scss';
+@import '../components/Auth/ResetPassword/resetpassword.scss';
+@import '../components/Auth/ForgotPassword/forgotpassword.scss';
+@import '../components/Profile/profile.scss';
+@import '../components/Profile/ChangePhoto/changephoto.scss';
+@import '../components/Profile/ChangePassword/changepassword.scss';
+@import '../components/Profile/UpdateProfile/updateprofile.scss';
+@import '../components/Contact/contact.scss';
+@import '../components/Admin/Dashboard/dashboard.scss';
+@import '../components/Admin/createBlog/createblog.scss';
+@import '../components/Admin/GetUsers/GetUser.scss';
+@import '../components/Admin/GetBlogs/getblogs.scss';
+@import '../components/Layouts/Loader/loader.scss';
+@import 'mediaquery';

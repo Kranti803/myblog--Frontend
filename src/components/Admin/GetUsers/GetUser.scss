@@ -1,0 +1,40 @@
+.getalluser {
+  min-height: 90vh;
+  margin-top: 2rem;
+  > h1 {
+    font: 700 1.5rem $text;
+    text-align: center;
+    color: #495057;
+    padding-bottom: 1.5rem;
+  }
+  > .user_container {
+    overflow-x: scroll;
+    > table {
+      font-family: $navText;
+      color: #495057;
+      border-collapse: collapse;
+      width: 100%;
+      td,
+      th {
+        border: 1px solid #363a3e;
+        text-align: left;
+        padding: 8px;
+      }
+      td:last-of-type {
+        > button {
+          padding: 0.4rem 1rem;
+          width: 100%;
+          border: none;
+          background-color: #363a3e;
+          color: white;
+          font: 400 1rem $navText;
+          cursor: pointer;
+          margin-bottom: 1.5rem;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

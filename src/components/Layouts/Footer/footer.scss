@@ -1,0 +1,28 @@
+footer {
+  background-color: #212529;
+  min-height: 10rem;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  >div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    >h4{
+        font: 700 1.2rem $text;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+    >p{
+        font: 400 .85rem $navText;
+    }
+    &:nth-child(4)>div{
+        display: flex;
+        gap: 1rem;
+        font-size: 1.5rem;
+
+    }
+  }
+}

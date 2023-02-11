@@ -1,0 +1,171 @@
+.GetArticlesSection {
+  min-height: 59.375rem;
+  padding: 2rem;
+  > h1 {
+    color: #495057;
+    margin: 0 0 1rem 0;
+    font: 700 2.25rem $text;
+  }
+  > .categories {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem 0;
+    > button {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      font: 700 1rem $text;
+      color: #495057;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: #d4a373;
+        scale: 1.1;
+      }
+    }
+  }
+  .articles {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+.articleCard {
+  height: 28.125rem;
+  width: 19.375rem;
+  border-radius: 5px;
+  position: relative;
+  > img {
+    height: 17.5rem;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      scale: 0.95;
+    }
+  }
+  > span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font: 700 10px $navText;
+    color: white;
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+    > span {
+      color: #6c757d;
+      font: 400 0.85rem $text;
+    }
+    > h2 > a {
+      font: 700 1.3rem $text;
+      color: #495057;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: #d4a373;
+      }
+    }
+    > aside {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 1rem;
+      > img {
+        height: 35px;
+        width: 35px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      > p {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        color: #6c757d;
+      }
+    }
+  }
+}
+
+.featuredArticles {
+  min-height: 27.875rem;
+  padding: 1rem 2rem;
+
+  > h2 {
+    color: #495057;
+    font: 700 2rem $text;
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+  > .featured_articles_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+}
+
+.featuredArticleCard {
+  height: 21.875rem;
+  width: 25.25rem;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    scale: 0.95;
+  }
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+  > div {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    > span:first-of-type {
+      position: absolute;
+      top: -290%;
+      right: 5%;
+      padding: 5px;
+      border-radius: 8px;
+      font: 700 0.75rem $navText;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    > span:last-of-type {
+      color: #cbd3d8;
+      font: 400 0.85rem $text;
+    }
+    > h2 {
+      > a {
+        font: 700 1.3rem $text;
+        color: #ffffff;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: #d4a373;
+        }
+      }
+    }
+  }
+}

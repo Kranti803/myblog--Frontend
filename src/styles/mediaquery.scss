@@ -1,0 +1,217 @@
+@media screen and (max-width: 1026px) {
+  .GetArticlesSection {
+    .articles {
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .featuredArticleCard {
+    width: 20.25rem;
+  }
+  .login > div > form {
+    width: 60%;
+  }
+  .signup > div > form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    > h2 {
+      display: none;
+    }
+    > button {
+      display: block;
+    }
+    > ul {
+      > div:nth-child(1),
+      > aside {
+        display: none;
+      }
+      > div:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  .about {
+    > div {
+      flex-direction: column;
+    }
+  }
+  .login > div > form {
+    width: 70%;
+  }
+  .signup > div > form {
+    width: 70%;
+  }
+
+  .carouselCard > .overlay > div > h2 {
+    font-size: 0.9rem;
+  }
+  .second_carousel_component > div:last-of-type {
+    > h1 {
+      font-size: 1.5rem;
+    }
+    > p:first-of-type {
+      font-size: 0.65rem;
+    }
+  }
+  .articleCard {
+    > div {
+      > aside {
+        margin-top: 0.6rem;
+      }
+      > h2 > a {
+        font-size: 1rem;
+      }
+    }
+    width: 15.375rem;
+  }
+  .featuredArticleCard {
+    width: 18.25rem;
+  }
+  .GetArticlesSection > .categories {
+    overflow-x: scroll;
+  }
+  .featuredArticleCard {
+    width: 18.25rem;
+    > div > h2 > a {
+      font-size: 1rem;
+    }
+  }
+
+  .featuredArticles > .featured_articles_container {
+    justify-content: space-evenly;
+  }
+
+  .profile > .profile_info > div:first-of-type {
+    > img {
+      height: 150px;
+      width: 150px;
+    }
+  }
+
+  .article_details {
+    > .top {
+      padding: 0.5rem 2rem;
+    }
+    > .middle {
+      padding: 2rem;
+    }
+    > .bottom {
+      padding: 1rem 2rem;
+      > form {
+        > div {
+          width: 75%;
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .profile > .profile_info {
+    flex-direction: column;
+    gap: 2.5rem;
+    > div:last-of-type {
+      gap: 1.5rem;
+    }
+  }
+
+  .article_details {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .carouselCard {
+    > .overlay {
+      > div {
+        top: 65%;
+      }
+    }
+  }
+
+  .second_carousel_component > div:last-of-type {
+    > h1 {
+      font-size: 0.8rem;
+    }
+    > p:first-of-type {
+      display: none;
+    }
+  }
+  .contact > div > form {
+    padding-bottom: 1rem;
+  }
+  .about > div > img {
+    height: 400px;
+  }
+
+  .login > div > form {
+    width: 80%;
+  }
+
+  .signup > div > form {
+    width: 80%;
+  }
+
+  .profile > .profile_info > div:first-of-type {
+    width: 90%;
+    align-items: center;
+    > button {
+      width: 90%;
+    }
+  }
+  .profile > .profile_info > div:last-of-type {
+    align-items: center;
+    width: 100%;
+    > aside {
+      flex-direction: column;
+      width: 100%;
+      > button {
+        width: 80%;
+        margin: auto;
+      }
+    }
+    > p {
+      letter-spacing: 0px;
+      font-size: 0.85rem;
+    }
+  }
+
+  .article_details {
+    padding: 0.7rem;
+    > .top {
+      padding: 0.5rem 1rem;
+      > h2 {
+        font-size: 1.2rem;
+      }
+    }
+    > .middle {
+      padding: 0.7rem;
+    }
+    > .bottom {
+      padding: 0.7rem;
+      > form {
+        > div {
+          flex-direction: column;
+          >button{
+            padding: .5rem 0;
+          }
+          textarea {
+            height: 2.5rem;
+            font-size: .75rem;
+            &::placeholder{
+              font-size: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

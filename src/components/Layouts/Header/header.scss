@@ -1,0 +1,203 @@
+nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+  width: 100%;
+  background-color:white;
+  >button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #495057;
+    display: none;
+  }
+  > h2 {
+    font: 700 20px $logo;
+    line-height: 22px;
+    color:#495057;
+  }
+  > ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font: 700 1rem $navText;
+
+    > div:nth-child(1) {
+      display: flex;
+      gap: 1rem;
+      > li > a {
+        color:#495057;
+        
+      }
+    }
+    > div:nth-child(2) {
+      display: flex;
+      gap: 1rem;
+      padding: 0 10px;
+      border-right: 2px solid #495057;
+      border-left: 2px solid #495057;
+      > svg {
+        color:#495057;
+      }
+    }
+    > div:nth-child(3) {
+      display: flex;
+      align-items: center;
+      border-radius: 16px;
+      padding: 5px;
+      gap: 2px;
+      > .input {
+        border: 1px solid #495057;
+        outline: none;
+        border-radius: 16px;
+        padding: 0.3rem;
+        width: 0;
+        width: 0;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+
+      //showing and hiding of input..
+      > .show_input {
+        width: 100%;
+        opacity: 1;
+      }
+      > svg {
+        color:#495057;
+      }
+    }
+    > aside {
+      display: flex;
+      align-items: center;
+      color: #495057;
+      gap: 10px;
+      .logout{
+        color: #495057;
+      }
+      > button {
+        padding: 5px 10px;
+        border-radius: 16px;
+        border: 2px solid #495057;
+        outline: none;
+        background-color: transparent;
+        font-size: 1rem;
+
+        > a {
+          color: #495057;
+          &:hover {
+            color: #d4a373;
+          }
+        }
+      }
+      > a {
+        color: #495057;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+          scale: 1.2;
+        }
+      }
+    }
+  }
+
+  .mobile_nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-200%);
+    transition: all .4s ease-in-out;
+    z-index: 99;
+    > div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1rem 2rem;
+      > h2 {
+        font: 700 20px $logo;
+        line-height: 22px;
+        color: #f8f9fa;
+      }
+      > button {
+        border: none;
+        background-color: inherit;
+        outline: none;
+        font-size: xx-large;
+        color: white;
+      }
+    }
+    > ul {
+      width: 100%;
+      height: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      >li>a{
+        color: #ffffff;
+        font: 700 1.2rem $navText;
+        letter-spacing: 1px;
+        &:hover{
+          color:#d4a373;
+        }
+      }
+    }
+    >div:last-of-type{
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      justify-content: center;
+      align-items: center;
+
+      
+      >.logout{
+        color: white;
+      }
+
+      >button:first-of-type{
+        padding: 5px 12px;
+        font-size: 1.2rem;
+        border-radius: 32px;
+        background-color: inherit;
+        border: 2px solid white;
+        transition: all .5s ease-in-out;
+
+        &:hover{
+          scale: 1.1;
+        }
+        >a{
+        color: white;
+        }
+      }
+      >a{
+        border: 2px solid red;
+        font:400 1rem $navText;
+        padding: .4rem .5rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        border: 2px solid #ffffff ;
+        border-radius: 32px;
+        transition: all .5s ease-in-out;
+        &:hover{
+          scale: 1.1;
+        }
+      }
+    }
+  }
+
+  
+  //opening and closing of navbar...
+
+  .mobile_nav_opens{
+    transform: translateY(0);
+  }
+
+}
+

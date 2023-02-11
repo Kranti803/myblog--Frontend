@@ -1,0 +1,45 @@
+.about{
+    min-height: 85vh;
+    padding: 1.5rem 0;
+    >h2{
+        text-align: center;
+        font: 700 2rem $text;
+        color: #495057;
+        padding-bottom: 1rem;
+    }
+    >div{
+        display: flex;
+        padding: 0 1rem;
+        justify-content: center;
+        align-items: center;
+        >img{
+            height: 450px;
+            border-radius: 4px;
+        }
+        >div{
+            >p{
+                font: 400 1rem $navText;
+                color: #495057;
+                letter-spacing: 1px;
+                padding: 1rem 2rem;
+                text-align: center;
+            }
+            >div{
+                >h4{
+                    font: 400 1.5rem $text;
+                    text-align: center;
+                    padding: 1rem 0;
+
+                }
+                >aside{
+                    padding: 0 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
