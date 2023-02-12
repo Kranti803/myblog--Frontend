@@ -1,38 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {  login } from "./../../../redux/actions/userActions";
-import { toast } from "react-hot-toast";
-import { clearError, clearMessage } from "../../../redux/reducers/userSlice";
+import { login } from "./../../../redux/actions/userActions";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
-
-  const { message, error } = useSelector((state) => state.user);
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    dispatch(login(email, password));
-  };
-
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const { message } = useSelector((state) => state.user);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+    await dispatch(login(email, password));
+
     if (message) {
-      toast.success(message);
-      dispatch(clearMessage());
       navigate("/");
     }
-
-    if (error) {
-      toast.error(error);
-      dispatch(clearError());
-    }
-  }, [dispatch, error, message, navigate]);
+  };
 
   return (
     <section className="login">
