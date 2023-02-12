@@ -24,7 +24,7 @@ const Dashboard = () => {
         className='dashboard_details'>
         <h1>Dashboard</h1>
         <h1>Welcome Back, {user.name} </h1>
-        <Link to={'/admin/create'}><button>Create Post</button></Link>
+        <Link to={'/admin/create'}><button>Back To HomePage</button></Link>
       </div>
     </section>
   );
