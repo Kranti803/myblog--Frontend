@@ -49,6 +49,7 @@ const EditBlog = () => {
     dispatch(getSingleBlog(id));
     setTitle(blog?.title);
     setContent(blog?.content);
+    setCategory(blog?.category);
 
     if (error) {
       toast.error(error);
@@ -58,7 +59,7 @@ const EditBlog = () => {
       toast.success(message);
       dispatch(clearMessage());
     }
-  }, [dispatch, id, error, message, blog?.title, blog?.content]);
+  }, [dispatch, id, error, message, blog?.title, blog?.content,blog?.category]);
 
   return (
     <section className="dashboard">
@@ -89,8 +90,8 @@ const EditBlog = () => {
                   id=""
                   required
                   onChange={(e) => setCategory(e.target.value)}
+                  value={category || ''}
                 >
-                  <option>Select Category</option>
                   {categories.map((item, index) => (
                     <option key={index} value={item}>
                       {item}
