@@ -93,13 +93,13 @@ const EditBlog = () => {
               </div>
               <div className="category">
                 <h4>Select Category</h4>
-                <select name="" id="" required>
+                <select name="" id="" required onChange={(e) => setCategory(e.target.value)}>
                   <option>Select Category</option>
                   {categories.map((item, index) => (
                     <option
                       key={index}
                       value={item}
-                      onClick={() => setCategory(item)}
+                      
                     >
                       {item}
                     </option>
