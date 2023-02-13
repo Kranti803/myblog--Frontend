@@ -19,13 +19,15 @@ const EditBlog = () => {
   const { blog } = useSelector((state) => state.blogs);
   const { message, error } = useSelector((state) => state.admin);
 
+  console.log(category);
+
   const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getSingleBlog(id));
-    setTitle(blog?.title);
-    setContent(blog?.content);
+    setTitle(blog?.title)
+    setContent(blog?.content)
 
     if (error) {
       toast.error(error);
@@ -41,7 +43,8 @@ const EditBlog = () => {
     error,
     message,
     blog?.title,
-    blog?.content,
+    blog?.content
+  
   ]);
 
   const selectImageHandler = (e) => {
@@ -54,7 +57,6 @@ const EditBlog = () => {
     };
   };
 
-  console.log(blog);
 
   const submitHandler = (e) => {
     e.preventDefault();

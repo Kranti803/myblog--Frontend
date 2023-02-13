@@ -4,7 +4,7 @@ import profileReducer from '../redux/reducers/profileSlice'
 import blogReducer from '../redux/reducers/blogSlice'
 import adminReducer from '../redux/reducers/adminSlice'
 
-export const server = 'https://mern-blog-website-gxcf.onrender.com/api/v1';
+export const server = 'https://mern-blog-website-9x1m.onrender.com/api/v1';
 
 const store = configureStore({
     reducer: {

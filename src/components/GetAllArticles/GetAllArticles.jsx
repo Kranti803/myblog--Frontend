@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllBlogs } from "../../redux/actions/blogActions";
+import { getAllBlogCategory } from "../../redux/actions/blogActions";
 import Loader from './../Layouts/Loader/Loader';
 
 
 const GetAllArticles = () => {
   const categories = ["Adventure", "Travel", "Fashion", "Technology"];
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState('');
 
   const { blogs,loading } = useSelector((state) => state.blogs);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getAllBlogs(category));
+    dispatch(getAllBlogCategory(category));
   }, [dispatch, category]);
 
   if(loading) return <Loader/>
@@ -23,7 +23,7 @@ const GetAllArticles = () => {
     <section className="GetArticlesSection" id="articles">
       <h1>Popular topics</h1>
       <div className="categories">
-        <button onClick={() => dispatch(getAllBlogs())}>All</button>
+        <button onClick={() => dispatch(getAllBlogCategory())}>All</button>
         {categories?.map((item, index) => (
           <button onClick={() => setCategory(item)} key={index}>
             {item}

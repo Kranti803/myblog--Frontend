@@ -5,13 +5,27 @@ import { allBlogsRequest, allBlogSuccess, allBlogFail, createBlogRequest, create
 
 
 
-export const getAllBlogs = (search = '', category = '') => async (dispatch) => {
+export const getAllBlogCategory = ( category='', search='') => async (dispatch) => {
     try {
         dispatch(allBlogsRequest());
 
         const { data } = await axios.get(`${server}/blogs?search=${search}&category=${category}`);
 
-        dispatch(allBlogSuccess(data.blogs));
+        dispatch(allBlogSuccess(data?.blogs));
+
+    } catch (error) {
+
+        dispatch(allBlogFail(error.response.data.message));
+    }
+}
+
+export const getAllBlogs = ( search='', category='',) => async (dispatch) => {
+    try {
+        dispatch(allBlogsRequest());
+
+        const { data } = await axios.get(`${server}/blogs?search=${search}&category=${category}`);
+
+        dispatch(allBlogSuccess(data?.blogs));
 
     } catch (error) {
 
@@ -28,7 +42,7 @@ export const getSingleBlog = (id) => async (dispatch) => {
         const { data } = await axios.get(`${server}/blog/${id}`);
 
         dispatch(singleBlogSuccess(data.blog));
-        
+
 
     } catch (error) {
 
@@ -59,7 +73,7 @@ export const createNewBlog = (myFormData) => async (dispatch) => {
 
 
 
-export const addComments = (comment,id) => async (dispatch) => {
+export const addComments = (comment, id) => async (dispatch) => {
     try {
         dispatch(addCommentRequest());
 
@@ -81,12 +95,12 @@ export const addComments = (comment,id) => async (dispatch) => {
 
 
 
-export const deleteComments = (commentId,id) => async (dispatch) => {
+export const deleteComments = (commentId, id) => async (dispatch) => {
     try {
         dispatch(deleteCommentRequest());
 
         const { data } = await axios.delete(`${server}/blogs/${id}/deletecomments/${commentId}`, {
-           
+
             withCredentials: true,
         });
 

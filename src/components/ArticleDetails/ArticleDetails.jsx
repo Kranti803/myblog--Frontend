@@ -84,7 +84,7 @@ const ArticleDetails = () => {
                 <span>{item.name}</span>
                 <span>
                   {user?.role === "admin" || user?._id === item.user ? (
-                    <button onClick={() => deleteCommentHandler(item._id)}>
+                    <button  onClick={() => deleteCommentHandler(item._id)}>
                       Delete
                     </button>
                   ) : (
