@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 import { clearError, clearMessage } from "../../../redux/reducers/adminSlice";
 
 const EditBlog = () => {
-  const categories = ["Select Category","Adventure", "Travel", "Fashion", "Technology"];
+  const categories = ["Adventure", "Travel", "Fashion", "Technology"];
   const [openSidebar, setOpenSidebar] = useState(false);
 
   const [content, setContent] = useState("");
@@ -26,6 +26,7 @@ const EditBlog = () => {
     dispatch(getSingleBlog(id));
     setTitle(blog?.title);
     setContent(blog?.content);
+    setCategory(blog?.category);
 
     if (error) {
       toast.error(error);
@@ -35,9 +36,15 @@ const EditBlog = () => {
       toast.success(message);
       dispatch(clearMessage());
     }
-  }, [dispatch, id, error, message,blog?.title,blog?.content]);
-
-
+  }, [
+    dispatch,
+    id,
+    error,
+    message,
+    blog?.title,
+    blog?.content,
+    blog?.category,
+  ]);
 
   const selectImageHandler = (e) => {
     const file = e.target.files[0];
@@ -88,14 +95,14 @@ const EditBlog = () => {
               </div>
               <div className="category">
                 <h4>Select Category</h4>
-                <select
-                  name=""
-                  id=""
-                  onChange={(e) => setCategory(e.target.value)}
-                  required
-                >
+                <select name="" id="" required>
+                  <option>Select Category</option>
                   {categories.map((item, index) => (
-                    <option key={index} value={item}>
+                    <option
+                      key={index}
+                      value={category}
+                      onClick={() => setCategory(item)}
+                    >
                       {item}
                     </option>
                   ))}
