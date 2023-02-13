@@ -26,7 +26,6 @@ const EditBlog = () => {
     dispatch(getSingleBlog(id));
     setTitle(blog?.title);
     setContent(blog?.content);
-    setCategory(blog?.category);
 
     if (error) {
       toast.error(error);
@@ -43,7 +42,6 @@ const EditBlog = () => {
     message,
     blog?.title,
     blog?.content,
-    blog?.category,
   ]);
 
   const selectImageHandler = (e) => {
@@ -100,7 +98,7 @@ const EditBlog = () => {
                   {categories.map((item, index) => (
                     <option
                       key={index}
-                      value={category}
+                      value={item}
                       onClick={() => setCategory(item)}
                     >
                       {item}
