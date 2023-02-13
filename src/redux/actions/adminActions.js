@@ -101,6 +101,8 @@ export const updateBlog = (myFormData,id) => async (dispatch) => {
             withCredentials: true
         })
 
+        console.log(data);
+
         dispatch(updateBlogSuccess(data.message))
 
     } catch (error) {

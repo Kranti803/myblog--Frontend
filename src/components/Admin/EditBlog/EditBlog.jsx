@@ -19,33 +19,8 @@ const EditBlog = () => {
   const { blog } = useSelector((state) => state.blogs);
   const { message, error } = useSelector((state) => state.admin);
 
-  console.log(category);
-
   const { id } = useParams();
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getSingleBlog(id));
-    setTitle(blog?.title)
-    setContent(blog?.content)
-
-    if (error) {
-      toast.error(error);
-      dispatch(clearError());
-    }
-    if (message) {
-      toast.success(message);
-      dispatch(clearMessage());
-    }
-  }, [
-    dispatch,
-    id,
-    error,
-    message,
-    blog?.title,
-    blog?.content
-  
-  ]);
 
   const selectImageHandler = (e) => {
     const file = e.target.files[0];
@@ -56,7 +31,6 @@ const EditBlog = () => {
       setImage(file);
     };
   };
-
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -70,6 +44,21 @@ const EditBlog = () => {
 
     dispatch(updateBlog(myFormData, id));
   };
+
+  useEffect(() => {
+    dispatch(getSingleBlog(id));
+    setTitle(blog?.title);
+    setContent(blog?.content);
+
+    if (error) {
+      toast.error(error);
+      dispatch(clearError());
+    }
+    if (message) {
+      toast.success(message);
+      dispatch(clearMessage());
+    }
+  }, [dispatch, id, error, message, blog?.title, blog?.content]);
 
   return (
     <section className="dashboard">
@@ -90,19 +79,20 @@ const EditBlog = () => {
                   onChange={(e) => setTitle(e.target.value)}
                   type="text"
                   placeholder="Write Title..."
-                  value={title}
+                  value={title || ''}
                 />
               </div>
               <div className="category">
                 <h4>Select Category</h4>
-                <select name="" id="" required onChange={(e) => setCategory(e.target.value)}>
+                <select
+                  name=""
+                  id=""
+                  required
+                  onChange={(e) => setCategory(e.target.value)}
+                >
                   <option>Select Category</option>
                   {categories.map((item, index) => (
-                    <option
-                      key={index}
-                      value={item}
-                      
-                    >
+                    <option key={index} value={item}>
                       {item}
                     </option>
                   ))}
@@ -119,7 +109,7 @@ const EditBlog = () => {
                   rows="10"
                   placeholder="Write Content here..."
                   onChange={(e) => setContent(e.target.value)}
-                  value={content}
+                  value={content || ''}
                 ></textarea>
               </div>
               <button type="submit"> Update Post</button>
