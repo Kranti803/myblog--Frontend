@@ -72,6 +72,17 @@ const adminSlice = createSlice({
             state.loading = false;
             state.error = action.payload;
         },
+        contactUsRequest: (state) => {
+            state.loading = true;
+        },
+        contactUsSuccess: (state, action) => {
+            state.loading = false;
+            state.message = action.payload;
+        },
+        contactUsFail: (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        },
         clearError: (state) => {
             state.error = null;
         },
@@ -85,7 +96,8 @@ export const { getAllUserFail, getAllUserRequest, getAllUserSuccess, changeRoleF
     clearError, clearMessage, deleteUserFail, deleteUserRequest,
     deleteUserSuccess, deleteBlogPostFail, deleteBlogPostRequest,
     deleteBlogPostSuccess, changeBlogFeaturedFail, changeBlogFeaturedRequest, changeBlogFeaturedSuccess,
-    updateBlogFail, updateBlogRequest, updateBlogSuccess
+    updateBlogFail, updateBlogRequest, updateBlogSuccess,
+    contactUsFail,contactUsRequest,contactUsSuccess
 } = adminSlice.actions;
 
 export default adminSlice.reducer;

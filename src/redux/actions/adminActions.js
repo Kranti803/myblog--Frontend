@@ -1,6 +1,6 @@
 import { server } from "../store";
 import axios from 'axios';
-import { changeBlogFeaturedFail, changeBlogFeaturedRequest, changeBlogFeaturedSuccess, changeRoleFail, changeRoleRequest, changeRoleSuccess, deleteBlogPostFail, deleteBlogPostRequest, deleteBlogPostSuccess, deleteUserFail, deleteUserRequest, deleteUserSuccess, getAllUserFail, getAllUserRequest, getAllUserSuccess, updateBlogFail, updateBlogRequest, updateBlogSuccess } from "../reducers/adminSlice";
+import { changeBlogFeaturedFail, changeBlogFeaturedRequest, changeBlogFeaturedSuccess, changeRoleFail, changeRoleRequest, changeRoleSuccess, contactUsFail, contactUsRequest, contactUsSuccess, deleteBlogPostFail, deleteBlogPostRequest, deleteBlogPostSuccess, deleteUserFail, deleteUserRequest, deleteUserSuccess, getAllUserFail, getAllUserRequest, getAllUserSuccess, updateBlogFail, updateBlogRequest, updateBlogSuccess } from "../reducers/adminSlice";
 
 
 export const getAllUsers = () => async (dispatch) => {
@@ -101,12 +101,33 @@ export const updateBlog = (myFormData,id) => async (dispatch) => {
             withCredentials: true
         })
 
-        console.log(data);
 
         dispatch(updateBlogSuccess(data.message))
 
     } catch (error) {
         dispatch(updateBlogFail(error.response.data.message));
+    }
+}
+
+
+
+export const contactUs = (name,email,subject,message) => async (dispatch) => {
+
+    try {
+        dispatch(contactUsRequest())
+
+        const { data } = await axios.put(`${server}/admin/contact`, {name,email,subject,message}, {
+            headers: {
+                'Content-type': 'application/json',
+            },
+            withCredentials: true
+        })
+
+
+        dispatch(contactUsSuccess(data.message))
+
+    } catch (error) {
+        dispatch(contactUsFail(error.response.data.message));
     }
 }
 
