@@ -116,7 +116,7 @@ export const contactUs = (name,email,subject,message) => async (dispatch) => {
     try {
         dispatch(contactUsRequest())
 
-        const { data } = await axios.put(`${server}/admin/contact`, {name,email,subject,message}, {
+        const { data } = await axios.post(`${server}/admin/contact`, {name,email,subject,message}, {
             headers: {
                 'Content-type': 'application/json',
             },
